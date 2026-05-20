@@ -4,20 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://c8xt6hx6vn8n4" path="res://player.tscn" id="2_oi3di"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4ue"]
-size = Vector2(624, 72)
+size = Vector2(623, 72)
 
 [node name="level" type="Node2D" unique_id=1612217825]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=329579154]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=961034932]
-position = Vector2(293, 33)
+position = Vector2(313, -36)
 scale = Vector2(8.914286, 1)
 texture = ExtResource("1_vonw3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1436568069]
-position = Vector2(292, 33)
+position = Vector2(313.5, -36)
 shape = SubResource("RectangleShape2D_0b4ue")
 
 [node name="player" parent="." unique_id=1774059176 instance=ExtResource("2_oi3di")]
-position = Vector2(43, -59)
+position = Vector2(53, -119)

@@ -1,19 +1,86 @@
 [gd_scene format=3 uid="uid://c8xt6hx6vn8n4"]
 
-[ext_resource type="Script" uid="uid://bim6xeoh7xftu" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://d31k8or6bue1p" path="res://player.gd" id="1_606se"]
+[ext_resource type="Texture2D" uid="uid://dpxhy2k8doi8g" path="res://assets/Base pack/Tiles/ladder_top.png" id="2_606se"]
 [ext_resource type="Texture2D" uid="uid://baw0vx4j654im" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://vqyv3ffqswxe" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_badge1.png" id="4_u1c27"]
+[ext_resource type="Texture2D" uid="uid://d3ht856j5v4q8" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_badge2.png" id="5_op7ga"]
+[ext_resource type="Texture2D" uid="uid://cxt0myl5vy4pb" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_climb1.png" id="6_q13i1"]
+[ext_resource type="Texture2D" uid="uid://cncroy0w5mtdh" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_climb2.png" id="7_pylmc"]
+[ext_resource type="Texture2D" uid="uid://ctixo867771ao" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_duck.png" id="8_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://dewk0e35ihm1" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_hurt.png" id="9_5tmop"]
+[ext_resource type="Texture2D" uid="uid://clytuoirnyx6g" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_jump.png" id="10_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://ckwq811n0hcn4" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_stand.png" id="11_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://bnbndylent2ej" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_swim1.png" id="12_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://bpqfk3ff0g8gc" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_swim2.png" id="13_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://cixwvwaiejf0s" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_walk1.png" id="14_7hik5"]
+[ext_resource type="Texture2D" uid="uid://448ertv1uhka" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_walk2.png" id="15_qtqh7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
 radius = 20.0
 height = 74.0
 
-[node name="player" type="CharacterBody2D" unique_id=1774059176]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wuci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qtqh7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=164626789]
-texture = ExtResource("2_i3pqv")
+[node name="player" type="CharacterBody2D" unique_id=1774059176]
+script = ExtResource("1_606se")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=575535715]
+position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304816098]
 shape = SubResource("CapsuleShape2D_hqtel")
-script = ExtResource("1_onrkg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=832477315]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_606se")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554604939]
+sprite_frames = SubResource("SpriteFrames_2wuci")
+animation = &"walk"
