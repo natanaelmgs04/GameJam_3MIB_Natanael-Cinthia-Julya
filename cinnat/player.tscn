@@ -1,20 +1,18 @@
 [gd_scene format=3 uid="uid://c8xt6hx6vn8n4"]
 
 [ext_resource type="Script" uid="uid://d31k8or6bue1p" path="res://player.gd" id="1_606se"]
-[ext_resource type="Texture2D" uid="uid://dpxhy2k8doi8g" path="res://assets/Base pack/Tiles/ladder_top.png" id="2_606se"]
-[ext_resource type="Texture2D" uid="uid://baw0vx4j654im" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue.png" id="2_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://vqyv3ffqswxe" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_badge1.png" id="4_u1c27"]
-[ext_resource type="Texture2D" uid="uid://d3ht856j5v4q8" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_badge2.png" id="5_op7ga"]
-[ext_resource type="Texture2D" uid="uid://cxt0myl5vy4pb" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_climb1.png" id="6_q13i1"]
-[ext_resource type="Texture2D" uid="uid://cncroy0w5mtdh" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_climb2.png" id="7_pylmc"]
-[ext_resource type="Texture2D" uid="uid://ctixo867771ao" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_duck.png" id="8_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://dewk0e35ihm1" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_hurt.png" id="9_5tmop"]
-[ext_resource type="Texture2D" uid="uid://clytuoirnyx6g" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_jump.png" id="10_7ahtn"]
-[ext_resource type="Texture2D" uid="uid://ckwq811n0hcn4" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_stand.png" id="11_7lmhl"]
-[ext_resource type="Texture2D" uid="uid://bnbndylent2ej" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_swim1.png" id="12_dx0e4"]
-[ext_resource type="Texture2D" uid="uid://bpqfk3ff0g8gc" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_swim2.png" id="13_jm5j8"]
-[ext_resource type="Texture2D" uid="uid://cixwvwaiejf0s" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_walk1.png" id="14_7hik5"]
-[ext_resource type="Texture2D" uid="uid://448ertv1uhka" path="res://assets/Extra animations and enemies/Alien sprites/alienBlue_walk2.png" id="15_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://bf3lvva7o8ev3" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk01.png" id="2_ivps1"]
+[ext_resource type="Texture2D" uid="uid://ce8tt8p7une3n" path="res://assets/Base pack/Player/p2_jump.png" id="2_urp6f"]
+[ext_resource type="Texture2D" uid="uid://dfhph6lyv3qpu" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk02.png" id="3_urp6f"]
+[ext_resource type="Texture2D" uid="uid://c10mllxrpekdu" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk03.png" id="4_bwjto"]
+[ext_resource type="Texture2D" uid="uid://c0h17gi8x11fo" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk04.png" id="5_606se"]
+[ext_resource type="Texture2D" uid="uid://bpjv0g2401jf8" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk05.png" id="6_u1c27"]
+[ext_resource type="Texture2D" uid="uid://dq5rp8s566rtf" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk06.png" id="7_op7ga"]
+[ext_resource type="Texture2D" uid="uid://7kmfxsjddcax" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk07.png" id="8_q13i1"]
+[ext_resource type="Texture2D" uid="uid://d4arib8x7pj0j" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk08.png" id="9_pylmc"]
+[ext_resource type="Texture2D" uid="uid://24vy3lpvvatg" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk09.png" id="10_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://snhgq2qltu03" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk10.png" id="11_5tmop"]
+[ext_resource type="Texture2D" uid="uid://cwwf0j64e30lk" path="res://assets/Base pack/Player/p2_walk/PNG/p2_walk11.png" id="12_7ahtn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqtel"]
 radius = 20.0
@@ -24,47 +22,49 @@ height = 74.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_i3pqv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_u1c27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_op7ga")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_q13i1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_pylmc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_pbfsw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_5tmop")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_7ahtn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_7lmhl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_dx0e4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_jm5j8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_7hik5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_qtqh7")
+"texture": ExtResource("2_urp6f")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urp6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bwjto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7ahtn")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 20.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=1774059176]
@@ -79,8 +79,7 @@ shape = SubResource("CapsuleShape2D_hqtel")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=832477315]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_606se")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554604939]
 sprite_frames = SubResource("SpriteFrames_2wuci")
-animation = &"walk"
+animation = &"jump"
