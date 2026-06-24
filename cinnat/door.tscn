@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btdoortscn123"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_door"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(60, 90)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_door")
+
+[node name="Frame" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-34, 50, 34, 50, 34, -50, -34, -50)
+color = Color(0.35, 0.18, 0.05, 1)
+
+[node name="Opening" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, 50, 22, 50, 22, -35, -22, -35)
+color = Color(0.05, 0.05, 0.15, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 40.0
+offset_bottom = -60.0
+text = "???"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_door")

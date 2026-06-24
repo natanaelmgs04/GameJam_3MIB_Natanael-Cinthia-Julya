@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dn7c52eepgqa7"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_win"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_win")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.2, 0.08, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+text = "Você abriu a porta!"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 38
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+text = "Pontuação: 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+
+[node name="RetryButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(280, 50)
+text = "Jogar Novamente"
+theme_override_font_sizes/font_size = 20
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(280, 50)
+text = "Menu Principal"
+theme_override_font_sizes/font_size = 20
+
+[connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_pressed"]

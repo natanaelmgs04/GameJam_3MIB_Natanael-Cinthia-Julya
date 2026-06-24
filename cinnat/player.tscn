@@ -73,7 +73,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_7ahtn")
 }],
-"loop": false,
+"loop": true,
 "name": &"run",
 "speed": 20.0
 }, {
@@ -111,24 +111,25 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_7ahtn")
 }],
-"loop": false,
+"loop": true,
 "name": &"walk",
-"speed": 20.0
+"speed": 12.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1774059176]
+[node name="player" type="CharacterBody2D"]
 script = ExtResource("1_606se")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=575535715]
+[node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304816098]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_hqtel")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=832477315]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554604939]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2wuci")
-animation = &"run"
+animation = &"idle"
+autoplay = "idle"
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

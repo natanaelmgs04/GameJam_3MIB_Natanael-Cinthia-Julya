@@ -1,33 +1,40 @@
 extends CharacterBody2D
 
 const SPEED = 80.0
-const GRAVITY = 800.0
 
 var direction = 1
 
-# Variáveis que referenciam os nós da cena
-@onready var enemy: CharacterBody2D = $"."
-@onready var floor_left: Raycast2D = $FloorLeft
-																								# nome do nó
-@onready var floor_right: RayCast2D = $FloorRight
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var floor_left: RayCast2D = $FloorLeft
+@onready var floor_right: RayCast2D = $FloorRight
 
-func _physics_process(delta):
-	# Garante que a gravidade seja aplicada ao inimigo caso ele não esteja no chão
+func _ready() -> void:
+	print("Enemy spawned at: ", global_position)
+
+func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		velocity += get_gravity() * delta
 
-	# Inverte ao detectar borda com o método padrão do Raycast2D is_colliding()
 	if not floor_left.is_colliding():
 		direction = 1
 	if not floor_right.is_colliding():
 		direction = -1
-		# Aplica velocidade no eixo x
+
 	velocity.x = direction * SPEED
-	# Vira o sprite do personagem se estiver indo para a direita
-	anim.flip_h =  direction > 0
-	# Roda a animação de caminhar
+	anim.flip_h = direction > 0
 	anim.play("walk")
-		
-		# Move o inimigo
 	move_and_slide()
+
+func die() -> void:
+	print("Enemy died!")
+	GameManager.add_score(100)
+	queue_free()
+
+func _on_body_area_body_entered(body: Node2D) -> void:
+	if not body.has_method("take_damage"):
+		return
+	if body.velocity.y > 50:
+		body.velocity.y = -350.0
+		die()
+	else:
+		body.take_damage()
