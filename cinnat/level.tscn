@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://casfvyftp438j" path="res://kenney_new-platformer-pack-1.1/Vector/Tiles/flag_red_a.svg" id="37_dlbli"]
 [ext_resource type="Texture2D" uid="uid://bcho4p2sr3k1k" path="res://kenney_new-platformer-pack-1.1/Vector/Tiles/terrain_dirt_cloud_middle.svg" id="38_2hox4"]
 [ext_resource type="PackedScene" uid="uid://c8xt6hx6vn8n4" path="res://player.tscn" id="39_oaehd"]
+[ext_resource type="PackedScene" uid="uid://dhifigbvw4l0v" path="res://enemy.tscn" id="40_f8y3u"]
+[ext_resource type="PackedScene" uid="uid://bbi3e4yq6744o" path="res://killzone.tscn" id="41_0k1o5"]
 
 [sub_resource type="Gradient" id="Gradient_u52ul"]
 offsets = PackedFloat32Array(0, 0.3392857, 1)
@@ -56,6 +58,8 @@ fill_to = Vector2(1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oaehd"]
 size = Vector2(283.8009, 57)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k1ecl"]
 
 [node name="level" type="Node2D" unique_id=461561775]
 position = Vector2(7, -5)
@@ -292,3 +296,13 @@ texture = ExtResource("14_v5j5c")
 [node name="player" parent="." unique_id=1774059176 instance=ExtResource("39_oaehd")]
 physics_interpolation_mode = 1
 position = Vector2(116, 511)
+
+[node name="enemy" parent="." unique_id=1099133986 instance=ExtResource("40_f8y3u")]
+position = Vector2(615, 528)
+
+[node name="Killzone" parent="." unique_id=1507672282 instance=ExtResource("41_0k1o5")]
+position = Vector2(671, 516)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=318345344]
+position = Vector2(-276, 103)
+shape = SubResource("WorldBoundaryShape2D_k1ecl")
